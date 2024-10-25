@@ -1,5 +1,5 @@
 # console-songs
-Display song lyrics in console
+Translate and display song lyrics in console
 
 ### Requirements
 A `.env` file with your API keys:
