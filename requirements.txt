@@ -1,0 +1,3 @@
+python-dotenv
+lyricsgenius
+side-by-side
