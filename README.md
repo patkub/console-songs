@@ -1,5 +1,6 @@
 # console-songs
-Translate and display song lyrics in console
+
+Given a song and artist, fetches lyrics from [Genius](https://genius.com), translates them to English using [Azure AI Translator](https://learn.microsoft.com/en-us/azure/ai-services/translator/), and displays them side-by-side in the console.
 
 ### Requirements
 A `.env` file with your API keys:
