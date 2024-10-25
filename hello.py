@@ -72,7 +72,9 @@ subscription_key=os.getenv("MS_TRANSLATOR_KEY")
 endpoint = "https://api.cognitive.microsofttranslator.com/"
 path = '/translate?api-version=3.0'
 # from romanian to english
-params = '&from=ro&to=en'
+# params = '&from=ro&to=en'
+# or detect original language, and translate to english
+params = '&to=en'
 constructed_url = endpoint + path + params
 
 headers = {
