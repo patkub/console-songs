@@ -15,17 +15,17 @@ MS_TRANSLATOR_KEY=...
 
 Provide the song and optionally the artist's name
 ```
-python3 hello.py song [artist]
+python3 songs.py song [artist]
 ```
 
 Example:
 ```
-python3 hello.py "Ma ucide ea" "Mihail"
+python3 songs.py "Ma ucide ea" "Mihail"
 ```
 
 ### Sample Output
 ```
-(console-songs) patka@Patricks-MacBook-Air console-songs % python3 hello.py "Ma ucide ea" "Mihail"
+(console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
 Looking for song Ma ucide ea by artist Mihail
 Searching for "Ma ucide ea" by Mihail...
 Done.
