@@ -2,11 +2,13 @@
 Display song lyrics in console
 
 ### Requirements
-A `.env` file with:
+A `.env` file with your API keys:
 ```
-GENIUS_ACCESS_TOKEN=your_api_token_here...
+GENIUS_ACCESS_TOKEN=...
+MS_TRANSLATOR_KEY=...
 ```
-[Genius API](https://docs.genius.com)
+- [Genius API](https://docs.genius.com)
+- [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
 
 ### Usage
 
@@ -28,10 +30,12 @@ Searching for "Ma ucide ea" by Mihail...
 Done.
 
 Lyrics:
-7 ContributorsMă ucide ea Lyrics[Strofa 1]
-E totul în viteză
-Delir cât cerul de înalt
-Suntem în antiteză
-Subiecții unui simplu joc murdar
+7 ContributorsMă ucide ea Lyrics[Strofa 1]                                        7 ContributorsShe Kills Me Lyrics[Verse 1]
+E totul în viteză                                                                 It's all in speed
+Delir cât cerul de înalt                                                          Delirium as high as the sky
+Suntem în antiteză                                                                We are in antithesis
+Subiecții unui simplu joc murdar                                                  The subjects of a simple dirty game
+[Pre-refren]                                                                      [Pre-Chorus]
+Ochii mei, rușinați, coboară doritor                                              My eyes, ashamed, descend willingly     
 ...
 ```
