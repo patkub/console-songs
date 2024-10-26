@@ -30,13 +30,15 @@ Looking for song Ma ucide ea by artist Mihail
 Searching for "Ma ucide ea" by Mihail...
 Done.
 
-Lyrics:
+Original:                                                                         English:
+=========                                                                         ========
+
 7 ContributorsMă ucide ea Lyrics[Strofa 1]                                        7 ContributorsShe Kills Me Lyrics[Verse 1]
 E totul în viteză                                                                 It's all in speed
 Delir cât cerul de înalt                                                          Delirium as high as the sky
 Suntem în antiteză                                                                We are in antithesis
 Subiecții unui simplu joc murdar                                                  The subjects of a simple dirty game
 [Pre-refren]                                                                      [Pre-Chorus]
-Ochii mei, rușinați, coboară doritor                                              My eyes, ashamed, descend willingly     
+Ochii mei, rușinați, coboară doritor                                              My eyes, ashamed, descend willingly
 ...
 ```

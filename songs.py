@@ -47,6 +47,9 @@ english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 #
 # Display original and English translated lyrics side-by-side
 #
+print()
 print_side_by_side("Original:", "English:")
 print_side_by_side("=========", "========")
+print()
 print_side_by_side(song_lyrics, english_translation)
+print()
