@@ -1,5 +1,5 @@
 from .DisplayLyrics import DisplayLyrics
-from mock import patch, call
+from unittest.mock import patch, call
 
 
 def test_display_lyrics():
