@@ -7,7 +7,7 @@
 # - Translate to English
 # - Display original and English translated lyrics side-by-side
 
-import argparse, os
+import argparse, os, sys
 from dotenv import load_dotenv
 
 # Class to get song lyrics from Genius
@@ -37,6 +37,10 @@ artist = args.song[1] if len(args.song) > 1 else None
 
 lyrics_fetcher = FetchLyrics(os.getenv("GENIUS_ACCESS_TOKEN"))
 song_info = lyrics_fetcher.fetch_lyrics(song, artist)
+if song_info is None:
+    # song not found
+    sys.exit()
+
 song_lyrics = song_info.lyrics
 
 #
