@@ -1,6 +1,5 @@
 from .TranslateLyrics import TranslateLyrics
 import requests
-import unittest
 from unittest import mock
 
 
