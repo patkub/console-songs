@@ -21,7 +21,7 @@ MS_TRANSLATOR_KEY=...
 - [Genius API](https://docs.genius.com)
 - [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
 
-Setup a venv:
+Setup a virtual environment:
 ```
 python3 -m venv .
 source bin/activate
