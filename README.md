@@ -54,7 +54,7 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   --experimental, --no-experimental
-                        Enable experimental features. Uses a patched verion of Genius API
+                        Enable experimental features. Uses a patched version of Genius API
 ```
 
 </details>

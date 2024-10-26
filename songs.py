@@ -28,7 +28,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("song", nargs="+")
 parser.add_argument('--experimental',
                     action=argparse.BooleanOptionalAction,
-                    help='Enable experimental features.\nUses a patched verion of Genius API')
+                    help='Enable experimental features.\nUses a patched version of Genius API')
 args = parser.parse_args()
 
 song = args.song[0]
