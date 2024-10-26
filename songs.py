@@ -12,8 +12,10 @@ from dotenv import load_dotenv
 
 # Class to get song lyrics from Genius
 from fetch_lyrics import FetchLyrics, PatchedGenius
+
 # Class to translate lyrics using Microsoft Azure AI Translator
 from translate_lyrics import TranslateLyrics
+
 # Display output
 from display_lyrics import DisplayLyrics
 
@@ -26,9 +28,11 @@ load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("song", nargs="+")
-parser.add_argument('--experimental',
-                    action=argparse.BooleanOptionalAction,
-                    help='Enable experimental features.\nUses a patched verion of Genius API')
+parser.add_argument(
+    "--experimental",
+    action=argparse.BooleanOptionalAction,
+    help="Enable experimental features.\nUses a patched verion of Genius API",
+)
 args = parser.parse_args()
 
 song = args.song[0]

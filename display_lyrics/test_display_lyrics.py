@@ -14,8 +14,8 @@ def fake_print_side_by_side(output1, output2):
     pass
 
 
-@patch('builtins.print')
-@patch('side_by_side.print_side_by_side', fake_print_side_by_side)
+@patch("builtins.print")
+@patch("side_by_side.print_side_by_side", fake_print_side_by_side)
 def test_display_lyrics_method(mocked_print):
     """
     Displays original and English translated lyrics side-by-side
@@ -38,7 +38,7 @@ def test_display_lyrics_method(mocked_print):
         call("\n{}".format(song_info.full_title)),
         call("{}\n".format(song_info.url)),
         call(),
-        call()
+        call(),
     ]
 
     # assert

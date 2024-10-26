@@ -10,6 +10,7 @@ def mock_requests_post(*args, **kwargs):
     @param kwargs:
     @return:
     """
+
     class MockResponse:
         def __init__(self, json_data, status_code):
             self.json_data = json_data
@@ -20,15 +21,9 @@ def mock_requests_post(*args, **kwargs):
 
     # TODO: improve this url detection
     if args[0].startswith("https://api.cognitive.microsofttranslator.com/"):
-        return MockResponse([
-            {
-                "translations": [
-                    {
-                        "text": "mocked translated lyrics"
-                    }
-                ]
-            }
-        ], 200)
+        return MockResponse(
+            [{"translations": [{"text": "mocked translated lyrics"}]}], 200
+        )
 
     return MockResponse(None, 404)
 
@@ -42,7 +37,7 @@ def test_translate_lyrics_sets_translator_key():
     assert translate_lyrics.subscription_key == translator_key
 
 
-@mock.patch('requests.post', side_effect=mock_requests_post)
+@mock.patch("requests.post", side_effect=mock_requests_post)
 def test_translate_lyrics(mock_requests_post):
     """
     Translates lyrics
@@ -59,7 +54,8 @@ def test_translate_lyrics(mock_requests_post):
     # assert it replies with the mocked translated lyrics
     assert english_translation == "mocked translated lyrics"
 
-@mock.patch('requests.post', side_effect=mock_requests_post)
+
+@mock.patch("requests.post", side_effect=mock_requests_post)
 def test_mock_requests_post_404(mock_requests_post):
     """
     Test 404

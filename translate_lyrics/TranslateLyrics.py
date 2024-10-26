@@ -19,24 +19,22 @@ class TranslateLyrics:
         # If you encounter any issues with the base_url or path, make sure
         # that you are using the latest endpoint: https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate
         endpoint = "https://api.cognitive.microsofttranslator.com/"
-        path = '/translate?api-version=3.0'
+        path = "/translate?api-version=3.0"
         # from romanian to english
         # params = '&from=ro&to=en'
         # or detect original language, and translate to english
-        params = '&to=en'
+        params = "&to=en"
         constructed_url = endpoint + path + params
 
         headers = {
-            'Ocp-Apim-Subscription-Key': self.subscription_key,
-            'Ocp-Apim-Subscription-Region': 'eastus',
-            'Content-type': 'application/json',
-            'X-ClientTraceId': str(uuid.uuid4())
+            "Ocp-Apim-Subscription-Key": self.subscription_key,
+            "Ocp-Apim-Subscription-Region": "eastus",
+            "Content-type": "application/json",
+            "X-ClientTraceId": str(uuid.uuid4()),
         }
 
         # You can pass more than one object in body.
-        body = [{
-            'text': lyrics
-        }]
+        body = [{"text": lyrics}]
         request = requests.post(constructed_url, headers=headers, json=body)
         response = request.json()
         english_translation = response[0]["translations"][0]["text"]

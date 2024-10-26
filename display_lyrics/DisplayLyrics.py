@@ -24,4 +24,3 @@ class DisplayLyrics:
         print()
         side_by_side.print_side_by_side(original_lyrics, english_lyrics)
         print()
-
