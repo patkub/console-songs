@@ -45,3 +45,10 @@ Subiecții unui simplu joc murdar                                               
 Ochii mei, rușinați, coboară doritor                                              My eyes, ashamed, descend willingly
 ...
 ```
+
+### Unit Tests
+
+Run unit tests with [pytest](https://docs.pytest.org/en/stable/)
+```
+pytest
+```

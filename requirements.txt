@@ -1,3 +1,5 @@
 python-dotenv
 lyricsgenius
 side-by-side
+pytest
+pytest-cov
