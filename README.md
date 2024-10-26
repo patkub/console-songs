@@ -48,7 +48,7 @@ Ochii mei, rușinați, coboară doritor                                         
 
 ### Unit Tests
 
-Run unit tests with [pytest](https://docs.pytest.org/en/stable/)
+Run unit tests with [pytest](https://docs.pytest.org/en/stable/) and report coverage.
 ```
 pytest
 ```
