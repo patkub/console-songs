@@ -12,14 +12,27 @@
 
 Enjoy listening to music and learning a new language!
 
-### Requirements
-A `.env` file with your API keys:
+### Setup
+Create an `.env` file with your API keys:
 ```
 GENIUS_ACCESS_TOKEN=...
 MS_TRANSLATOR_KEY=...
 ```
 - [Genius API](https://docs.genius.com)
 - [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
+
+Setup a venv:
+```
+python3 -m venv .
+source bin/activate
+```
+
+Install dependencies:
+```
+pip3 install -r requirements.txt
+```
+
+You should now be able to run `python3 songs.py --help` and see usage.
 
 ### Usage
 
