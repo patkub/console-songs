@@ -1,6 +1,6 @@
 # Usage: python3 hello.py song [artist]
-# python3 hello.py "Ma ucide ea" "Mihail"
-# python3 hello.py "nu te mai astept" "alina eremia"
+# python3 songs.py "Ma ucide ea" "Mihail"
+# python3 songs.py "nu te mai astept" "alina eremia"
 
 # Idea:
 # - Fetch song lyrics from genius.com
