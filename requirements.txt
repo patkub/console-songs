@@ -7,5 +7,7 @@ side-by-side
 pytest
 pytest-cov
 
+black
+
 # PatchedGenius
 beautifulsoup4
