@@ -2,7 +2,7 @@ from .DisplayLyrics import DisplayLyrics
 from unittest.mock import patch, call
 
 
-def test_display_lyrics():
+def test_display_lyrics_obj():
     """
     Instantiates DisplayLyrics
     """
@@ -18,7 +18,7 @@ def fake_print_side_by_side(output1, output2):
 @patch('side_by_side.print_side_by_side', fake_print_side_by_side)
 def test_display_lyrics_method(mocked_print):
     """
-    Instantiates DisplayLyrics
+    Displays original and English translated lyrics side-by-side
     """
 
     class FakeSongInfo:
