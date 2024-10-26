@@ -3,7 +3,7 @@
 # python3 hello.py "nu te mai astept" "alina eremia"
 
 # Idea:
-# - Fetch lyrics from genius.com
+# - Fetch song lyrics from genius.com
 # - Translate to English
 # - Display original and English translated lyrics side-by-side
 
@@ -31,14 +31,15 @@ song = args.song[0]
 artist = args.song[1] if len(args.song) > 1 else None
 
 #
-# Fetch song lyrics
+# Fetch song lyrics from Genius
 #
 
 lyrics_fetcher = FetchLyrics(os.getenv("GENIUS_ACCESS_TOKEN"))
-song_lyrics = lyrics_fetcher.fetch_lyrics(song, artist)
+song_info = lyrics_fetcher.fetch_lyrics(song, artist)
+song_lyrics = song_info.lyrics
 
 #
-# Translate lyrics to English
+# Translate lyrics to English using Microsoft Azure AI Translator
 #
 
 lyrics_translator = TranslateLyrics(os.getenv("MS_TRANSLATOR_KEY"))
@@ -47,7 +48,11 @@ english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 #
 # Display original and English translated lyrics side-by-side
 #
-print()
+
+# Display song info
+print("\n{}".format(song_info.full_title))
+print("{}\n".format(song_info.url))
+# Display original and English translated lyrics side-by-side
 print_side_by_side("Original:", "English:")
 print_side_by_side("=========", "========")
 print()
