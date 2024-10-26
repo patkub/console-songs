@@ -1,5 +1,6 @@
 import requests, uuid
 
+
 class TranslateLyrics:
     def __init__(self, translator_key):
         """

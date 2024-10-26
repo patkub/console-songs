@@ -1,0 +1,1 @@
+from .DisplayLyrics import DisplayLyrics

@@ -9,12 +9,13 @@
 
 import argparse, os
 from dotenv import load_dotenv
-from side_by_side import print_side_by_side
 
 # Class to get song lyrics from Genius
 from fetch_lyrics import FetchLyrics
 # Class to translate lyrics using Microsoft Azure AI Translator
 from translate_lyrics import TranslateLyrics
+# Display output
+from display_lyrics import DisplayLyrics
 
 # loading variables from .env file
 load_dotenv()
@@ -49,12 +50,4 @@ english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 # Display original and English translated lyrics side-by-side
 #
 
-# Display song info
-print("\n{}".format(song_info.full_title))
-print("{}\n".format(song_info.url))
-# Display original and English translated lyrics side-by-side
-print_side_by_side("Original:", "English:")
-print_side_by_side("=========", "========")
-print()
-print_side_by_side(song_lyrics, english_translation)
-print()
+DisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
