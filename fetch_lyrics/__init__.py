@@ -1,0 +1,1 @@
+from .FetchLyrics import FetchLyrics

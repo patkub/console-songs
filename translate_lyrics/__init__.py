@@ -1,0 +1,1 @@
+from .TranslateLyrics import TranslateLyrics
