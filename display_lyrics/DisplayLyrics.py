@@ -1,4 +1,4 @@
-from side_by_side import print_side_by_side
+import side_by_side
 
 
 class DisplayLyrics:
@@ -19,9 +19,9 @@ class DisplayLyrics:
         print("\n{}".format(song_info.full_title))
         print("{}\n".format(song_info.url))
         # Display original and English translated lyrics side-by-side
-        print_side_by_side("Original:", "English:")
-        print_side_by_side("=========", "========")
+        side_by_side.print_side_by_side("Original:", "English:")
+        side_by_side.print_side_by_side("=========", "========")
         print()
-        print_side_by_side(original_lyrics, english_lyrics)
+        side_by_side.print_side_by_side(original_lyrics, english_lyrics)
         print()
 
