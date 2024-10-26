@@ -5,6 +5,13 @@
 [![Python package](https://github.com/patkub/console-songs/actions/workflows/python-app.yml/badge.svg)](https://github.com/patkub/console-songs/actions/workflows/python-app.yml)
 ![Python 3.x Required](https://img.shields.io/badge/python-3.x-brightgreen.svg)
 
+### Idea
+1. Fetch song lyrics
+2. Translate to English
+3. Display original and English translated lyrics side-by-side
+
+Enjoy listening to music and learning a new language!
+
 ### Requirements
 A `.env` file with your API keys:
 ```
