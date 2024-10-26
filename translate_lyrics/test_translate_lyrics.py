@@ -53,7 +53,7 @@ def test_translate_lyrics(mock_requests_post):
     translator_key = "fake_translator_key"
     translate_lyrics_obj = TranslateLyrics(translator_key)
 
-    # mocked_requests_get returns a mocked response from "https://api.cognitive.microsofttranslator.com/"
+    # mock_requests_post returns a mocked response from "https://api.cognitive.microsofttranslator.com/"
     # call translate_lyrics_obj.translate_lyrics(lyrics)
     english_translation = translate_lyrics_obj.translate_lyrics("some lyrics")
 
