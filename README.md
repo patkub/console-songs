@@ -27,6 +27,24 @@ Provide the song and optionally the artist's name
 ```
 python3 songs.py song [artist]
 ```
+<details>
+
+<summary>Full Usage</summary>
+
+```
+(console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py --help
+usage: songs.py [-h] [--experimental | --no-experimental] song [song ...]
+
+positional arguments:
+  song
+
+options:
+  -h, --help            show this help message and exit
+  --experimental, --no-experimental
+                        Enable experimental features. Uses a patched verion of Genius API
+```
+
+</details>
 
 Example:
 ```
@@ -57,7 +75,7 @@ Ochii mei, rușinați, coboară doritor                                         
 
 <details>
 
-<summary>Full Ouput</summary>
+<summary>Full Output</summary>
 
 ```
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"

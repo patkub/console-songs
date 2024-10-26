@@ -1,5 +1,11 @@
+# App
 python-dotenv
 lyricsgenius
 side-by-side
+
+# Unit Tests
 pytest
 pytest-cov
+
+# PatchedGenius
+beautifulsoup4

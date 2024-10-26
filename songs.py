@@ -11,7 +11,7 @@ import argparse, os, sys
 from dotenv import load_dotenv
 
 # Class to get song lyrics from Genius
-from fetch_lyrics import FetchLyrics
+from fetch_lyrics import FetchLyrics, PatchedGenius
 # Class to translate lyrics using Microsoft Azure AI Translator
 from translate_lyrics import TranslateLyrics
 # Display output
@@ -26,6 +26,9 @@ load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("song", nargs="+")
+parser.add_argument('--experimental',
+                    action=argparse.BooleanOptionalAction,
+                    help='Enable experimental features.\nUses a patched verion of Genius API')
 args = parser.parse_args()
 
 song = args.song[0]
@@ -35,7 +38,8 @@ artist = args.song[1] if len(args.song) > 1 else None
 # Fetch song lyrics from Genius
 #
 
-lyrics_fetcher = FetchLyrics(os.getenv("GENIUS_ACCESS_TOKEN"))
+patched_genius = PatchedGenius if args.experimental else None
+lyrics_fetcher = FetchLyrics(os.getenv("GENIUS_ACCESS_TOKEN"), patched_genius)
 song_info = lyrics_fetcher.fetch_lyrics(song, artist)
 if song_info is None:
     # song not found

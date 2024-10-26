@@ -2,12 +2,16 @@ from lyricsgenius import Genius
 
 
 class FetchLyrics:
-    def __init__(self, access_token):
+    def __init__(self, access_token, custom_genius=None):
         """
         Get song lyrics from Genius.
         @param access_token: string access token for Genius API https://docs.genius.com
+        @param custom_genius: optional custom Genius API object
         """
-        self.genius = Genius(access_token)
+
+        # use custom Genius object if not null, otherwise default Genius object
+        genius_obj = custom_genius if custom_genius is not None else Genius
+        self.genius = genius_obj(access_token)
 
     def fetch_lyrics(self, song, artist):
         """
