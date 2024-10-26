@@ -36,7 +36,6 @@ python3 songs.py "Ma ucide ea" "Mihail"
 ### Sample Output
 ```
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
-Looking for song Ma ucide ea by artist Mihail
 Searching for "Ma ucide ea" by Mihail...
 Done.
 
@@ -61,11 +60,11 @@ Ochii mei, rușinați, coboară doritor                                         
 <summary>Full Ouput</summary>
 
 ```
-patrick@patrick-meerkat:~$ console-songs "Ma ucide ea" "Mihail"
+(console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
 
-Mă ucide ea by Mihail
+Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics
 
 Original:                                                                    English:                                                                   
@@ -122,8 +121,6 @@ Mă ucide ea                                                                  Sh
 Mă ucide ea                                                                  She's killing me                                                           
 Mă ucide ea                                                                  She's killing me                                                           
 Da, da...Embed                                                               Yes, yes... Embed                                                          
-
-patrick@patrick-meerkat:~$
 ```
 
 </details>
