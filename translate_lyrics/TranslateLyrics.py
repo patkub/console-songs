@@ -11,7 +11,7 @@ class TranslateLyrics:
 
     def translate_lyrics(self, lyrics):
         """
-        Fetches lyrics for a song given its name and artist
+        Translates lyrics to English using Microsoft Azure AI Translator
 
         @param lyrics: string song lyrics in foreign language
         @return: string song lyrics in english
