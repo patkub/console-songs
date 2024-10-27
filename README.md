@@ -3,7 +3,7 @@
 > Given a song and artist, fetches lyrics from [Genius](https://genius.com), translates them to English using [Azure AI Translator](https://learn.microsoft.com/en-us/azure/ai-services/translator/), and displays original and translated lyrics side-by-side in the console.
 
 [![Python package](https://github.com/patkub/console-songs/actions/workflows/python-app.yml/badge.svg)](https://github.com/patkub/console-songs/actions/workflows/python-app.yml)
-![Python 3.x Required](https://img.shields.io/badge/python-3.x-brightgreen.svg)
+![Python 3.11+ Required](https://img.shields.io/badge/python-3.11+-brightgreen.svg)
 
 ### Idea
 1. Fetch song lyrics
@@ -13,6 +13,8 @@
 Enjoy listening to music and learning a new language!
 
 ### Setup
+Requires Python 3.11+
+
 Create an `.env` file with your API keys:
 ```
 GENIUS_ACCESS_TOKEN=...
