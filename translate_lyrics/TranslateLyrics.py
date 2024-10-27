@@ -1,5 +1,5 @@
 import requests, uuid
-
+from requests.exceptions import RequestException
 
 class TranslateLyrics:
     def __init__(self, translator_key):
@@ -37,8 +37,14 @@ class TranslateLyrics:
         body = [{
             'text': lyrics
         }]
-        request = requests.post(constructed_url, headers=headers, json=body)
-        response = request.json()
-        english_translation = response[0]["translations"][0]["text"]
+
+        english_translation = ""
+        try:
+            request = requests.post(constructed_url, headers=headers, json=body)
+            response = request.json()
+            english_translation = response[0]["translations"][0]["text"]
+        except (RequestException, KeyError):
+            # ignore network error, or invalid data
+            pass
 
         return english_translation
