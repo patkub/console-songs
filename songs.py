@@ -7,7 +7,7 @@
 # - Translate to English
 # - Display original and English translated lyrics side-by-side
 
-import argparse, os, sys
+import argparse, os
 from dotenv import load_dotenv
 
 # Class to get song lyrics from Genius
@@ -20,42 +20,62 @@ from display_lyrics import DisplayLyrics
 # loading variables from .env file
 load_dotenv()
 
-#
-# Parse arguments
-#
 
-parser = argparse.ArgumentParser()
-parser.add_argument("song", nargs="+")
-parser.add_argument('--experimental',
-                    action=argparse.BooleanOptionalAction,
-                    help='Enable experimental features.\nUses a patched version of Genius API')
-args = parser.parse_args()
+def process_song(song, artist, access_keys, experimental):
+    """
+    Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
+    @param song: the name of the song
+    @param artist: the name of the artist
+    @param access_keys: dictionary of API access keys
+    @param experimental: use experimental features
+    """
+    #
+    # Fetch song lyrics from Genius
+    #
+    patched_genius = PatchedGenius if experimental else None
+    lyrics_fetcher = FetchLyrics(access_keys["GENIUS_ACCESS_TOKEN"], patched_genius)
+    song_info = lyrics_fetcher.fetch_lyrics(song, artist)
+    if song_info is None:
+        # song not found, end
+        return
 
-song = args.song[0]
-artist = args.song[1] if len(args.song) > 1 else None
+    song_lyrics = song_info.lyrics
 
-#
-# Fetch song lyrics from Genius
-#
+    #
+    # Translate lyrics to English using Microsoft Azure AI Translator
+    #
+    lyrics_translator = TranslateLyrics(access_keys["MS_TRANSLATOR_KEY"], access_keys["MS_TRANSLATOR_REGION"])
+    english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 
-patched_genius = PatchedGenius if args.experimental else None
-lyrics_fetcher = FetchLyrics(os.getenv("GENIUS_ACCESS_TOKEN"), patched_genius)
-song_info = lyrics_fetcher.fetch_lyrics(song, artist)
-if song_info is None:
-    # song not found
-    sys.exit()
+    #
+    # Display original and English translated lyrics side-by-side
+    #
+    DisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
 
-song_lyrics = song_info.lyrics
 
-#
-# Translate lyrics to English using Microsoft Azure AI Translator
-#
+if __name__ == '__main__':
+    #
+    # Parse arguments
+    #
 
-lyrics_translator = TranslateLyrics(os.getenv("MS_TRANSLATOR_KEY"), os.getenv("MS_TRANSLATOR_REGION"))
-english_translation = lyrics_translator.translate_lyrics(song_lyrics)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("song", nargs="+")
+    parser.add_argument('--experimental',
+                        action=argparse.BooleanOptionalAction,
+                        help='Enable experimental features.\nUses a patched version of Genius API')
+    args = parser.parse_args()
 
-#
-# Display original and English translated lyrics side-by-side
-#
+    song = args.song[0]
+    artist = args.song[1] if len(args.song) > 1 else None
 
-DisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
+    access_keys = {
+        'GENIUS_ACCESS_TOKEN': os.getenv("GENIUS_ACCESS_TOKEN"),
+        'MS_TRANSLATOR_KEY': os.getenv("MS_TRANSLATOR_KEY"),
+        'MS_TRANSLATOR_REGION': os.getenv("MS_TRANSLATOR_REGION")
+    }
+
+    #
+    # Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
+    #
+
+    process_song(song, artist, access_keys, args.experimental)
