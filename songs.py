@@ -51,7 +51,7 @@ song_lyrics = song_info.lyrics
 # Translate lyrics to English using Microsoft Azure AI Translator
 #
 
-lyrics_translator = TranslateLyrics(os.getenv("MS_TRANSLATOR_KEY"))
+lyrics_translator = TranslateLyrics(os.getenv("MS_TRANSLATOR_KEY"), os.getenv("MS_TRANSLATOR_REGION"))
 english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 
 #

@@ -2,12 +2,13 @@ import requests, uuid
 from requests.exceptions import RequestException
 
 class TranslateLyrics:
-    def __init__(self, translator_key):
+    def __init__(self, translator_key, region):
         """
         Translate song lyrics using Microsoft Azure AI Translator
         @param translator_key: string access token for Azure Translator Resource https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource
         """
         self.subscription_key = translator_key
+        self.region = region
 
     def translate_lyrics(self, lyrics):
         """
@@ -28,7 +29,7 @@ class TranslateLyrics:
 
         headers = {
             'Ocp-Apim-Subscription-Key': self.subscription_key,
-            'Ocp-Apim-Subscription-Region': 'eastus',
+            'Ocp-Apim-Subscription-Region': self.region,
             'Content-type': 'application/json',
             'X-ClientTraceId': str(uuid.uuid4())
         }

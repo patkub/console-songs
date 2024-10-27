@@ -54,7 +54,8 @@ def test_translate_lyrics_sets_translator_key():
     Sets translator key
     """
     translator_key = "fake_translator_key"
-    translate_lyrics = TranslateLyrics(translator_key)
+    region = "eastus"
+    translate_lyrics = TranslateLyrics(translator_key, region)
     assert translate_lyrics.subscription_key == translator_key
 
 
@@ -66,7 +67,8 @@ def test_translate_lyrics(mock_req):
 
     # Prepare: instantiate TranslateLyrics with fake translator key
     translator_key = "fake_translator_key"
-    translate_lyrics_obj = TranslateLyrics(translator_key)
+    region = "eastus"
+    translate_lyrics_obj = TranslateLyrics(translator_key, region)
 
     # mock_requests_post returns a mocked response from "https://api.cognitive.microsofttranslator.com/"
     # call translate_lyrics_obj.translate_lyrics(lyrics)
@@ -84,7 +86,8 @@ def test_translate_lyrics_invalid(mock_req):
 
     # Prepare: instantiate TranslateLyrics with fake translator key
     translator_key = "fake_translator_key"
-    translate_lyrics_obj = TranslateLyrics(translator_key)
+    region = "eastus"
+    translate_lyrics_obj = TranslateLyrics(translator_key, region)
 
     # mock_requests_post returns a mocked response from "https://api.cognitive.microsofttranslator.com/"
     # call translate_lyrics_obj.translate_lyrics(lyrics)
