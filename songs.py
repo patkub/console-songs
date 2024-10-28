@@ -53,7 +53,7 @@ def process_song(song, artist, access_keys, genius_patch):
     DisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     #
     # Parse arguments
     #

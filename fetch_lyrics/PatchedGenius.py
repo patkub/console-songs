@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 
-class PatchedGenius(Genius):
+class PatchedGenius(Genius):  # pragma: no cover
     """
     A patched version of Genius with @xanthon's fixes to remove ads and unwanted content in lyrics
     Credit: @xanthon from https://github.com/johnwmillr/LyricsGenius/pull/272 . Thanks!
