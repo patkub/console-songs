@@ -58,7 +58,9 @@ if __name__ == '__main__':  # pragma: no cover
     # Parse arguments
     #
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
     parser.add_argument("song", nargs="+")
     parser.add_argument('--genius-patch',
                         action=argparse.BooleanOptionalAction,

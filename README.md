@@ -57,7 +57,7 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   --genius-patch, --no-genius-patch
-                        Use patched version of Genius API
+                        Use patched version of Genius API (default: True)
 ```
 
 </details>
