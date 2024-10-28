@@ -84,6 +84,7 @@ E totul în viteză                                                             
 Delir cât cerul de înalt                                                          Delirium as high as the sky
 Suntem în antiteză                                                                We are in antithesis
 Subiecții unui simplu joc murdar                                                  The subjects of a simple dirty game
+
 [Pre-refren]                                                                      [Pre-Chorus]
 Ochii mei, rușinați, coboară doritor                                              My eyes, ashamed, descend willingly
 ...
