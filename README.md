@@ -76,17 +76,17 @@ Done.
 Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics
 
-Original:                                                                             English:                                                                            
-=========                                                                             ========                                                                            
+Original:                                                        English:                                                                       
+=========                                                        ========                                                                       
 
-[Strofa 1]                                                                            [Verse 1]                                                                           
-E totul în viteză                                                                     It's all in speed                                                                   
-Delir cât cerul de înalt                                                              Delirium as high as the sky                                                         
-Suntem în antiteză                                                                    We are in antithesis                                                                
-Subiecții unui simplu joc murdar                                                      The subjects of a simple dirty game                                                 
+[Strofa 1]                                                       [Verse 1]
+E totul în viteză                                                It's all in speed
+Delir cât cerul de înalt                                         Delirium as high as the sky
+Suntem în antiteză                                               We are in antithesis
+Subiecții unui simplu joc murdar                                 The subjects of a simple dirty game
 
-[Pre-refren]                                                                          [Pre-Chorus]                                                                        
-Ochii mei, rușinați, coboară doritor                                                  My eyes, ashamed, descend willingly
+[Pre-refren]                                                     [Pre-Chorus]
+Ochii mei, rușinați, coboară doritor                             My eyes, ashamed, descend willingly
 ...
 ```
 
@@ -99,71 +99,71 @@ Ochii mei, rușinați, coboară doritor                                         
 Searching for "Ma ucide ea" by Mihail...
 Done.
 
-Mă ucide ea by Mihail
+Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics
 
-Original:                                                                             English:                                                                            
-=========                                                                             ========                                                                            
+Original:                                                        English:
+=========                                                        ========
 
-[Strofa 1]                                                                            [Verse 1]                                                                           
-E totul în viteză                                                                     It's all in speed                                                                   
-Delir cât cerul de înalt                                                              Delirium as high as the sky                                                         
-Suntem în antiteză                                                                    We are in antithesis                                                                
-Subiecții unui simplu joc murdar                                                      The subjects of a simple dirty game                                                 
+[Strofa 1]                                                       [Verse 1]
+E totul în viteză                                                It's all in speed
+Delir cât cerul de înalt                                         Delirium as high as the sky
+Suntem în antiteză                                               We are in antithesis
+Subiecții unui simplu joc murdar                                 The subjects of a simple dirty game
 
-[Pre-refren]                                                                          [Pre-Chorus]                                                                        
-Ochii mei, rușinați, coboară doritor                                                  My eyes, ashamed, descend willingly                                                 
-Dar te respir, în acest urban decor                                                   But I breathe you, in this urban setting                                            
+[Pre-refren]                                                     [Pre-Chorus]
+Ochii mei, rușinați, coboară doritor                             My eyes, ashamed, descend willingly
+Dar te respir, în acest urban decor                              But I breathe you, in this urban setting
 
-[Refren]                                                                              [Chorus]                                                                            
-Mă ucide ea, mă ucide ea                                                              She's killing me, she's killing me                                                  
-Încet...                                                                              Slow...                                                                             
-Îmi vrea inima, îmi vrea inima                                                        He wants my heart, he wants my heart                                                
-Din piept                                                                             From the chest                                                                      
+[Refren]                                                         [Chorus]
+Mă ucide ea, mă ucide ea                                         She's killing me, she's killing me
+Încet...                                                         Slow...
+Îmi vrea inima, îmi vrea inima                                   He wants my heart, he wants my heart
+Din piept                                                        From the chest
 
-[Strofa 2]                                                                            [Verse 2]                                                                           
-E atât de grațioasă                                                                   She's so graceful                                                                   
-Printre mulțimi de oameni                                                             Among crowds of people                                                              
-Plictisiți pe drum                                                                    Bored on the road                                                                   
-Și pare un dans ascuns                                                                And it seems like a hidden dance                                                    
-Supuși, dansează doi necunoscuți                                                      Submissive, two strangers dance                                                     
+[Strofa 2]                                                       [Verse 2]
+E atât de grațioasă                                              She's so graceful
+Printre mulțimi de oameni                                        Among crowds of people
+Plictisiți pe drum                                               Bored on the road
+Și pare un dans ascuns                                           And it seems like a hidden dance
+Supuși, dansează doi necunoscuți                                 Submissive, two strangers dance
 
-[Pre-refren]                                                                          [Pre-Chorus]                                                                        
-Ochii mei, rușinați, coboară doritor                                                  My eyes, ashamed, descend willingly                                                 
-Dar te respir, în acest urban decor                                                   But I breathe you, in this urban setting                                            
+[Pre-refren]                                                     [Pre-Chorus]
+Ochii mei, rușinați, coboară doritor                             My eyes, ashamed, descend willingly
+Dar te respir, în acest urban decor                              But I breathe you, in this urban setting
 
-[Refren]                                                                              [Chorus]                                                                            
-Mă ucide ea, mă ucide ea                                                              She's killing me, she's killing me                                                  
-Încet...                                                                              Slow...                                                                             
-Îmi vrea inima, îmi vrea inima                                                        He wants my heart, he wants my heart                                                
-Din piept                                                                             From the chest                                                                      
-Mă ucide ea, mă ucide ea                                                              She's killing me, she's killing me                                                  
-Încet...                                                                              Slow...                                                                             
-Îmi vrea inima, îmi vrea inima                                                        He wants my heart, he wants my heart                                                
-Din piept                                                                             From the chest                                                                      
+[Refren]                                                         [Chorus]
+Mă ucide ea, mă ucide ea                                         She's killing me, she's killing me
+Încet...                                                         Slow...
+Îmi vrea inima, îmi vrea inima                                   He wants my heart, he wants my heart
+Din piept                                                        From the chest
+Mă ucide ea, mă ucide ea                                         She's killing me, she's killing me
+Încet...                                                         Slow...
+Îmi vrea inima, îmi vrea inima                                   He wants my heart, he wants my heart
+Din piept                                                        From the chest
 
-[Punte]                                                                               [Tips]                                                                              
-Arde pe asfalt și pulsează foc                                                        It burns on the asphalt and pulsates fire                                           
-Arde, arde revoltat                                                                   It burns, it burns in revolt                                                        
-Arde prea frumos, arde inima                                                          It burns too beautifully, it burns the heart                                        
-Arde, recunosc!                                                                       It's burning, I admit!                                                              
+[Punte]                                                          [Tips]
+Arde pe asfalt și pulsează foc                                   It burns on the asphalt and pulsates fire
+Arde, arde revoltat                                              It burns, it burns in revolt
+Arde prea frumos, arde inima                                     It burns too beautifully, it burns the heart
+Arde, recunosc!                                                  It's burning, I admit!
 
-[Strofa 3]                                                                            [Verse 3]                                                                           
-Mă ucide ea încet, încet                                                              She's killing me slowly, slowly                                                     
-Îmi rupe inima, da, din piept                                                         It breaks my heart, yes, out of my chest                                            
-Tremură ușor buzele mușcate                                                           Bitten lips tremble slightly                                                        
-Iar gravitația mă atacă                                                               And gravity attacks me                                                              
-Fluturi și vibrații calde pe asfalt                                                   Butterflies and warm vibrations on asphalt                                          
-De parcă ne plimbăm desculți, prin pat                                                As if we were walking barefoot, in bed                                              
-Sirene de incendiu care nu ne pot opri                                                Fire sirens that can't stop us                                                      
-Iar timpul, un nemernic, numără grăbit                                                And time, an, counts in a hurry                                                     
+[Strofa 3]                                                       [Verse 3]
+Mă ucide ea încet, încet                                         She's killing me slowly, slowly
+Îmi rupe inima, da, din piept                                    It breaks my heart, yes, out of my chest
+Tremură ușor buzele mușcate                                      Bitten lips tremble slightly
+Iar gravitația mă atacă                                          And gravity attacks me
+Fluturi și vibrații calde pe asfalt                              Butterflies and warm vibrations on asphalt
+De parcă ne plimbăm desculți, prin pat                           As if we were walking barefoot, in bed
+Sirene de incendiu care nu ne pot opri                           Fire sirens that can't stop us
+Iar timpul, un nemernic, numără grăbit                           And time, an, counts in a hurry
 
-[Outro]                                                                               [Other]                                                                             
-Mă ucide ea                                                                           She's killing me                                                                    
-Mă ucide ea                                                                           She's killing me                                                                    
-Mă ucide ea                                                                           She's killing me                                                                    
-Mă ucide ea                                                                           She's killing me                                                                    
-Da, da...                                                                             Yes, yes...                                                                                                                             
+[Outro]                                                          [Other]
+Mă ucide ea                                                      She's killing me
+Mă ucide ea                                                      She's killing me
+Mă ucide ea                                                      She's killing me
+Mă ucide ea                                                      She's killing me
+Da, da...                                                        Yes, yes...
 ```
 
 </details>
