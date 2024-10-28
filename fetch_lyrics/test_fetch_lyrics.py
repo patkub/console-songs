@@ -2,7 +2,7 @@ from .FetchLyrics import FetchLyrics
 from unittest.mock import patch
 
 
-@patch('lyricsgenius.Genius.search_song')
+@patch("lyricsgenius.Genius.search_song")
 def test_fetch_lyrics_calls_genius_api(mock_search_song):
     """
     Fetches lyrics for a song given its name and artist by calling Genius API
@@ -19,4 +19,3 @@ def test_fetch_lyrics_calls_genius_api(mock_search_song):
 
     # Assert underlying mocked lyricsgenius.Genius.search_song was called
     mock_search_song.assert_called_with("fake_song", "fake_artist")
-

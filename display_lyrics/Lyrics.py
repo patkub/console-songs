@@ -9,7 +9,7 @@ class Lyrics:
 
     def normalize_lyrics(self, lyrics):
         # normalize line endings
-        self.lyrics = re.sub(r'[\r\n][\r\n]{2,}', '\n\n', lyrics)
+        self.lyrics = re.sub(r"[\r\n][\r\n]{2,}", "\n\n", lyrics)
         # split into stanzas
         self.stanzas = self.lyrics.split("\n\n")
 
@@ -44,4 +44,3 @@ class Lyrics:
         Get the minimum number of stanzas between two Lyrics
         """
         return min(len(self.stanzas), len(other.stanzas))
-

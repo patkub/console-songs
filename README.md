@@ -4,6 +4,7 @@
 
 [![Python package](https://github.com/patkub/console-songs/actions/workflows/python-app.yml/badge.svg)](https://github.com/patkub/console-songs/actions/workflows/python-app.yml)
 ![Python 3.11+ Required](https://img.shields.io/badge/python-3.11+-brightgreen.svg)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ### Idea
 1. Fetch song lyrics
@@ -36,6 +37,11 @@ pip3 install -r requirements.txt
 ```
 
 You should now be able to run `python3 songs.py --help` and see usage.
+
+When making code changes, remember to format code with black:
+```
+black .
+```
 
 ### Usage
 

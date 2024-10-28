@@ -24,13 +24,13 @@ def get_expected_print_calls(song_info):
         call("\n{}".format(song_info.full_title)),
         call("{}\n".format(song_info.url)),
         call(),
-        call()
+        call(),
     ]
     return expected_print_calls
 
 
-@patch('builtins.print')
-@patch('side_by_side.print_side_by_side', fake_print_side_by_side)
+@patch("builtins.print")
+@patch("side_by_side.print_side_by_side", fake_print_side_by_side)
 def test_display_lyrics_method(mocked_print):
     """
     Displays original and English translated lyrics side-by-side
@@ -55,8 +55,8 @@ def test_display_lyrics_method(mocked_print):
     mocked_print.assert_has_calls(expected_print_calls)
 
 
-@patch('builtins.print')
-@patch('side_by_side.print_side_by_side', fake_print_side_by_side)
+@patch("builtins.print")
+@patch("side_by_side.print_side_by_side", fake_print_side_by_side)
 def test_display_lyrics_method_original_longer(mocked_print):
     """
     Displays original and English translated lyrics side-by-side
@@ -82,8 +82,8 @@ def test_display_lyrics_method_original_longer(mocked_print):
     mocked_print.assert_has_calls(expected_print_calls)
 
 
-@patch('builtins.print')
-@patch('side_by_side.print_side_by_side', fake_print_side_by_side)
+@patch("builtins.print")
+@patch("side_by_side.print_side_by_side", fake_print_side_by_side)
 def test_display_lyrics_method_original_shorter(mocked_print):
     """
     Displays original and English translated lyrics side-by-side
@@ -107,4 +107,3 @@ def test_display_lyrics_method_original_shorter(mocked_print):
     # expect to print: title, url, and two blank lines
     expected_print_calls = get_expected_print_calls(song_info)
     mocked_print.assert_has_calls(expected_print_calls)
-

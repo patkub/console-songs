@@ -8,6 +8,7 @@ class PatchedGenius(Genius):  # pragma: no cover
     A patched version of Genius with @xanthon's fixes to remove ads and unwanted content in lyrics
     Credit: @xanthon from https://github.com/johnwmillr/LyricsGenius/pull/272 . Thanks!
     """
+
     def __init__(self, *args, **kwargs):
         super(PatchedGenius, self).__init__(*args, **kwargs)
 
@@ -37,35 +38,36 @@ class PatchedGenius(Genius):  # pragma: no cover
         if song_url:
             path = song_url.replace("https://genius.com/", "")
         else:
-            path = self.song(song_id)['song']['path'][1:]
+            path = self.song(song_id)["song"]["path"][1:]
         # Scrape the song lyrics from the HTML
         html = BeautifulSoup(
-            self._make_request(path, web=True).replace('<br/>', '\n'),
-            "html.parser"
+            self._make_request(path, web=True).replace("<br/>", "\n"), "html.parser"
         )
         # Determine the class of the div
         divs = html.find_all("div", class_=re.compile("^lyrics$|Lyrics__Container"))
         if divs is None or len(divs) <= 0:
             if self.verbose:
-                print("Couldn't find the lyrics section. "
-                      "Please report this if the song has lyrics.\n"
-                      "Song URL: https://genius.com/{}".format(path))
+                print(
+                    "Couldn't find the lyrics section. "
+                    "Please report this if the song has lyrics.\n"
+                    "Song URL: https://genius.com/{}".format(path)
+                )
             return None
 
         # remove ads from div
-        ads = html.find("div", {'class': re.compile("RightSidebar__Container")})
+        ads = html.find("div", {"class": re.compile("RightSidebar__Container")})
         ads.decompose()
         # remove header
-        header = html.find("div", {'class': re.compile("LyricsHeader__Container")})
+        header = html.find("div", {"class": re.compile("LyricsHeader__Container")})
         header.decompose()
         # remove embed note / footer
-        footer = html.find("div", {'class': re.compile("LyricsFooter__Container")})
+        footer = html.find("div", {"class": re.compile("LyricsFooter__Container")})
         footer.decompose()
 
         lyrics = "\n".join([div.get_text() for div in divs])
 
         # Remove [Verse], [Bridge], etc.
         if self.remove_section_headers or remove_section_headers:
-            lyrics = re.sub(r'(\[.*?\])*', '', lyrics)
-            lyrics = re.sub('\n{2}', '\n', lyrics)  # Gaps between verses
+            lyrics = re.sub(r"(\[.*?\])*", "", lyrics)
+            lyrics = re.sub("\n{2}", "\n", lyrics)  # Gaps between verses
         return lyrics.strip("\n")

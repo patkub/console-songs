@@ -22,7 +22,7 @@ class FetchLyrics:
         @return: object: song info
         """
 
-        #print("Looking for song {} by artist {}".format(song, artist))
+        # print("Looking for song {} by artist {}".format(song, artist))
         # https://genius.com/Mihail-ma-ucide-ea-lyrics
         song = self.genius.search_song(song, artist)
         return song

@@ -41,17 +41,22 @@ class DisplayLyrics:
 
         # Display portion that has both original and english translation
         for i in range(min_stanzas):
-            side_by_side.print_side_by_side(split_original_lyrics[i], split_english_lyrics[i])
+            side_by_side.print_side_by_side(
+                split_original_lyrics[i], split_english_lyrics[i]
+            )
             print()
 
         if len_original_lyrics > len_english_lyrics:
             # original lyrics have more than english translation
             for i in range(len_original_lyrics - min_stanzas):
-                side_by_side.print_side_by_side(split_original_lyrics[min_stanzas - 1 + i], "")
+                side_by_side.print_side_by_side(
+                    split_original_lyrics[min_stanzas - 1 + i], ""
+                )
                 print()
         elif len_english_lyrics > len_original_lyrics:
             # english translated lyrics have more than original
             for i in range(len_english_lyrics - min_stanzas):
-                side_by_side.print_side_by_side("", split_english_lyrics[min_stanzas - 1 + i])
+                side_by_side.print_side_by_side(
+                    "", split_english_lyrics[min_stanzas - 1 + i]
+                )
                 print()
-

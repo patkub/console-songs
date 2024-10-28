@@ -12,8 +12,10 @@ from dotenv import load_dotenv
 
 # Class to get song lyrics from Genius
 from fetch_lyrics import FetchLyrics, PatchedGenius
+
 # Class to translate lyrics using Microsoft Azure AI Translator
 from translate_lyrics import TranslateLyrics
+
 # Display output
 from display_lyrics import DisplayLyrics
 
@@ -44,7 +46,9 @@ def process_song(song, artist, access_keys, genius_patch):
     #
     # Translate lyrics to English using Microsoft Azure AI Translator
     #
-    lyrics_translator = TranslateLyrics(access_keys["MS_TRANSLATOR_KEY"], access_keys["MS_TRANSLATOR_REGION"])
+    lyrics_translator = TranslateLyrics(
+        access_keys["MS_TRANSLATOR_KEY"], access_keys["MS_TRANSLATOR_REGION"]
+    )
     english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 
     #
@@ -53,7 +57,7 @@ def process_song(song, artist, access_keys, genius_patch):
     DisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
 
 
-if __name__ == '__main__':  # pragma: no cover
+if __name__ == "__main__":  # pragma: no cover
     #
     # Parse arguments
     #
@@ -62,19 +66,21 @@ if __name__ == '__main__':  # pragma: no cover
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument("song", nargs="+")
-    parser.add_argument('--genius-patch',
-                        action=argparse.BooleanOptionalAction,
-                        default=True,
-                        help='Use patched version of Genius API')
+    parser.add_argument(
+        "--genius-patch",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use patched version of Genius API",
+    )
     args = parser.parse_args()
 
     song = args.song[0]
     artist = args.song[1] if len(args.song) > 1 else None
 
     access_keys = {
-        'GENIUS_ACCESS_TOKEN': os.getenv("GENIUS_ACCESS_TOKEN"),
-        'MS_TRANSLATOR_KEY': os.getenv("MS_TRANSLATOR_KEY"),
-        'MS_TRANSLATOR_REGION': os.getenv("MS_TRANSLATOR_REGION")
+        "GENIUS_ACCESS_TOKEN": os.getenv("GENIUS_ACCESS_TOKEN"),
+        "MS_TRANSLATOR_KEY": os.getenv("MS_TRANSLATOR_KEY"),
+        "MS_TRANSLATOR_REGION": os.getenv("MS_TRANSLATOR_REGION"),
     }
 
     #

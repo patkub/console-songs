@@ -22,15 +22,9 @@ def mock_requests_post(*args, **kwargs):
 
     # TODO: improve this url detection
     if args[0].startswith("https://api.cognitive.microsofttranslator.com/"):
-        return MockResponse([
-            {
-                "translations": [
-                    {
-                        "text": "mocked translated lyrics"
-                    }
-                ]
-            }
-        ], 200)
+        return MockResponse(
+            [{"translations": [{"text": "mocked translated lyrics"}]}], 200
+        )
 
     return MockResponse(None, 404)
 
@@ -42,11 +36,7 @@ def mock_requests_post_invalid(*args, **kwargs):
     @param kwargs:
     @return:
     """
-    return MockResponse([
-        {
-            "fake_bad_data": "bad"
-        }
-    ], 200)
+    return MockResponse([{"fake_bad_data": "bad"}], 200)
 
 
 def test_translate_lyrics_sets_translator_key():
@@ -59,7 +49,7 @@ def test_translate_lyrics_sets_translator_key():
     assert translate_lyrics.subscription_key == translator_key
 
 
-@mock.patch('requests.post', side_effect=mock_requests_post)
+@mock.patch("requests.post", side_effect=mock_requests_post)
 def test_translate_lyrics(mock_req):
     """
     Translates lyrics
@@ -78,7 +68,7 @@ def test_translate_lyrics(mock_req):
     assert english_translation == "mocked translated lyrics"
 
 
-@mock.patch('requests.post', side_effect=mock_requests_post_invalid)
+@mock.patch("requests.post", side_effect=mock_requests_post_invalid)
 def test_translate_lyrics_invalid(mock_req):
     """
     Translates lyrics
@@ -97,7 +87,7 @@ def test_translate_lyrics_invalid(mock_req):
     assert english_translation == ""
 
 
-@mock.patch('requests.post', side_effect=mock_requests_post)
+@mock.patch("requests.post", side_effect=mock_requests_post)
 def test_mock_requests_post_404(mock_req):
     """
     Test 404
@@ -107,7 +97,7 @@ def test_mock_requests_post_404(mock_req):
     assert resp.status_code == 404
 
 
-@mock.patch('requests.post', side_effect=mock_requests_post_invalid)
+@mock.patch("requests.post", side_effect=mock_requests_post_invalid)
 def test_mock_requests_post_invalid(mock_req):
     """
     Test 404
