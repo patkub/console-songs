@@ -21,18 +21,18 @@ from display_lyrics import DisplayLyrics
 load_dotenv()
 
 
-def process_song(song, artist, access_keys, experimental):
+def process_song(song, artist, access_keys, genius_patch):
     """
     Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
     @param song: the name of the song
     @param artist: the name of the artist
     @param access_keys: dictionary of API access keys
-    @param experimental: use experimental features
+    @param genius_patch: use patched version of Genius api
     """
     #
     # Fetch song lyrics from Genius
     #
-    patched_genius = PatchedGenius if experimental else None
+    patched_genius = PatchedGenius if genius_patch else None
     lyrics_fetcher = FetchLyrics(access_keys["GENIUS_ACCESS_TOKEN"], patched_genius)
     song_info = lyrics_fetcher.fetch_lyrics(song, artist)
     if song_info is None:
@@ -60,9 +60,10 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("song", nargs="+")
-    parser.add_argument('--experimental',
+    parser.add_argument('--genius-patch',
                         action=argparse.BooleanOptionalAction,
-                        help='Enable experimental features.\nUses a patched version of Genius API')
+                        default=True,
+                        help='Use patched version of Genius API')
     args = parser.parse_args()
 
     song = args.song[0]
@@ -78,4 +79,4 @@ if __name__ == '__main__':
     # Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
     #
 
-    process_song(song, artist, access_keys, args.experimental)
+    process_song(song, artist, access_keys, args.genius_patch)
