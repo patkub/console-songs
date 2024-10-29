@@ -7,6 +7,7 @@ class TranslateLyrics:
         """
         Translate song lyrics using Microsoft Azure AI Translator
         @param translator_key: string access token for Azure Translator Resource https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource
+        @param region: string region for Azure Translator Resource
         """
         self.subscription_key = translator_key
         self.region = region

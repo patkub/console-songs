@@ -8,3 +8,4 @@ class BaseDisplayLyrics(ABC):
         """
         Display original and English translated lyrics
         """
+        pass
