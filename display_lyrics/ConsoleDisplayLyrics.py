@@ -1,8 +1,9 @@
 import side_by_side
+from .BaseDisplayLyrics import BaseDisplayLyrics
 from .Lyrics import Lyrics
 
 
-class DisplayLyrics:
+class ConsoleDisplayLyrics(BaseDisplayLyrics):
     def __init__(self):
         """
         Display original and English translated lyrics side-by-side

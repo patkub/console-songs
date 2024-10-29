@@ -17,7 +17,7 @@ from fetch_lyrics import FetchLyrics, PatchedGenius
 from translate_lyrics import TranslateLyrics
 
 # Display output
-from display_lyrics import DisplayLyrics
+from display_lyrics import ConsoleDisplayLyrics
 
 # loading variables from .env file
 load_dotenv()
@@ -54,7 +54,7 @@ def process_song(song, artist, access_keys, genius_patch):
     #
     # Display original and English translated lyrics side-by-side
     #
-    DisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
+    ConsoleDisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
 
 
 if __name__ == "__main__":  # pragma: no cover

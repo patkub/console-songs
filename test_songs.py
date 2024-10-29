@@ -13,7 +13,7 @@ mockedFetchLyrics.lyrics = "mocked_lyrics"
     "translate_lyrics.TranslateLyrics.TranslateLyrics.translate_lyrics",
     return_value="english translation",
 )
-@patch("display_lyrics.DisplayLyrics.DisplayLyrics.display_lyrics")
+@patch("display_lyrics.ConsoleDisplayLyrics.ConsoleDisplayLyrics.display_lyrics")
 def test_process_song(
     mocked_display_lyrics, mocked_translate_lyrics, mocked_fetch_lyrics
 ):
@@ -50,7 +50,7 @@ def test_process_song(
     "translate_lyrics.TranslateLyrics.TranslateLyrics.translate_lyrics",
     return_value="english translation",
 )
-@patch("display_lyrics.DisplayLyrics.DisplayLyrics.display_lyrics")
+@patch("display_lyrics.ConsoleDisplayLyrics.ConsoleDisplayLyrics.display_lyrics")
 def test_process_song_null(
     mocked_display_lyrics, mocked_translate_lyrics, mocked_fetch_lyrics
 ):

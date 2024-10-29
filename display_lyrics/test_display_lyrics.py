@@ -1,13 +1,14 @@
-from .DisplayLyrics import DisplayLyrics
+from .BaseDisplayLyrics import BaseDisplayLyrics
+from .ConsoleDisplayLyrics import ConsoleDisplayLyrics
 from unittest.mock import patch, call
 
 
 def test_display_lyrics_obj():
     """
-    Instantiates DisplayLyrics
+    Instantiates ConsoleDisplayLyrics
     """
-    display_lyrics = DisplayLyrics()
-    assert isinstance(display_lyrics, DisplayLyrics)
+    display_lyrics = ConsoleDisplayLyrics()
+    assert isinstance(display_lyrics, ConsoleDisplayLyrics)
 
 
 def fake_print_side_by_side(output1, output2):
@@ -45,11 +46,11 @@ def test_display_lyrics_method(mocked_print):
     song_info.url = "https://example.com/"
 
     # instantiate and display lyrics
-    display_lyrics = DisplayLyrics()
+    display_lyrics = ConsoleDisplayLyrics()
     display_lyrics.display_lyrics(song_info, "original", "english")
 
     # assert
-    assert isinstance(display_lyrics, DisplayLyrics)
+    assert isinstance(display_lyrics, BaseDisplayLyrics)
     # expect to print: title, url, and two blank lines
     expected_print_calls = get_expected_print_calls(song_info)
     mocked_print.assert_has_calls(expected_print_calls)
@@ -72,11 +73,11 @@ def test_display_lyrics_method_original_longer(mocked_print):
     song_info.url = "https://example.com/"
 
     # instantiate and display lyrics
-    display_lyrics = DisplayLyrics()
+    display_lyrics = ConsoleDisplayLyrics()
     display_lyrics.display_lyrics(song_info, "original\n\ntext\n\nlonger", "english")
 
     # assert
-    assert isinstance(display_lyrics, DisplayLyrics)
+    assert isinstance(display_lyrics, BaseDisplayLyrics)
     # expect to print: title, url, and two blank lines
     expected_print_calls = get_expected_print_calls(song_info)
     mocked_print.assert_has_calls(expected_print_calls)
@@ -99,11 +100,11 @@ def test_display_lyrics_method_original_shorter(mocked_print):
     song_info.url = "https://example.com/"
 
     # instantiate and display lyrics
-    display_lyrics = DisplayLyrics()
+    display_lyrics = ConsoleDisplayLyrics()
     display_lyrics.display_lyrics(song_info, "original", "english\n\ntext\n\nlonger")
 
     # assert
-    assert isinstance(display_lyrics, DisplayLyrics)
+    assert isinstance(display_lyrics, BaseDisplayLyrics)
     # expect to print: title, url, and two blank lines
     expected_print_calls = get_expected_print_calls(song_info)
     mocked_print.assert_has_calls(expected_print_calls)
