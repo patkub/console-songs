@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class BaseDisplayLyrics(ABC):
+class BaseDisplayLyrics(ABC):  # pragma: no cover
 
     @abstractmethod
     def display_lyrics(self, **kwargs):
