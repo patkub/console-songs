@@ -10,6 +10,9 @@
 import argparse, os
 from dotenv import load_dotenv
 
+# Class to store songs
+from database_songs import SongDatabaseHandler
+
 # Class to get song lyrics from Genius
 from fetch_lyrics import FetchLyrics, PatchedGenius
 
@@ -41,7 +44,24 @@ def process_song(song, artist, access_keys, genius_patch):
         # song not found, end
         return
 
+    # get the song lyrics
     song_lyrics = song_info.lyrics
+
+    # setup database for songs
+    song_db_handler = SongDatabaseHandler()
+    song_db_con = song_db_handler.setup_song_database()
+    if song_db_con:
+        song_res = song_db_handler.get_song_artist(
+            song_info.full_title, song_info.artist
+        )
+        if song_res:
+            # already have this song saved in database
+            english_translation = song_res[4]
+            ConsoleDisplayLyrics.display_lyrics(
+                song_info, song_lyrics, english_translation
+            )
+            # song fetched from database, end
+            return
 
     #
     # Translate lyrics to English using Microsoft Azure AI Translator
@@ -50,6 +70,9 @@ def process_song(song, artist, access_keys, genius_patch):
         access_keys["MS_TRANSLATOR_KEY"], access_keys["MS_TRANSLATOR_REGION"]
     )
     english_translation = lyrics_translator.translate_lyrics(song_lyrics)
+
+    # Save this song in the database
+    song_db_handler.save_song(song_info, song_lyrics, english_translation)
 
     #
     # Display original and English translated lyrics side-by-side
