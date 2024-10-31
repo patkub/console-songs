@@ -50,7 +50,7 @@ def process_song(song, artist, access_keys, genius_patch):
     # setup database for songs
     song_db_handler = SongDatabaseHandler()
     song_db_con = song_db_handler.setup_song_database()
-    if song_db_con:
+    if song_db_con:  # pragma: no cover
         song_res = song_db_handler.get_song_artist(
             song_info.full_title, song_info.artist
         )

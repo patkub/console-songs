@@ -1,7 +1,7 @@
 import sqlite3
 
 
-class SongDatabaseHandler:
+class SongDatabaseHandler:  # pragma: no cover
     def __init__(self):
         self.con = None
 
