@@ -166,3 +166,5 @@ cython_debug/
 bin/
 lib64
 junit/
+# songs database
+database_songs.db

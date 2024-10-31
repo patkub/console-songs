@@ -10,6 +10,7 @@
 1. Fetch song lyrics
 2. Translate to English
 3. Display original and English translated lyrics side-by-side
+4. Save already translated songs in database
 
 Enjoy listening to music and learning a new language!
 
