@@ -81,7 +81,6 @@ python3 songs.py "Ma ucide ea" "Mihail"
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
-Reading saved lyrics from database...
 
 Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics
@@ -108,7 +107,6 @@ Ochii mei, rușinați, coboară doritor                             My eyes, ash
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
-Reading saved lyrics from database...
 
 Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics

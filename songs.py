@@ -48,22 +48,6 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     # get the song lyrics
     song_lyrics = song_info.lyrics
 
-    # setup database for songs
-    song_db_handler = SongDatabaseHandler()
-    song_db_con = song_db_handler.setup_song_database()
-    if song_db_con:  # pragma: no cover
-        song_res = song_db_handler.get_song_artist(
-            song_info.full_title, song_info.artist
-        )
-        if song_res:
-            # already have this song saved in database
-            english_translation = song_res[4]
-            ConsoleDisplayLyrics.display_lyrics(
-                song_info, song_lyrics, english_translation
-            )
-            # song fetched from database, end
-            return
-
     #
     # Fetch song from database
     #
@@ -71,7 +55,6 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     song_db_con = song_db_handler.setup_song_database()
     if not refresh and song_db_con:  # pragma: no cover
         # fetch song from database
-        print("Reading saved lyrics from database...")
         song_res = song_db_handler.get_song_artist(
             song_info.full_title, song_info.artist
         )
@@ -84,8 +67,6 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
             )
             # song fetched from database, end
             return
-
-    print("Translating the lyrics...")
 
     #
     # Translate lyrics to English using Microsoft Azure AI Translator
