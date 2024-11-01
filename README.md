@@ -56,13 +56,15 @@ python3 songs.py song [artist]
 
 ```
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py --help
-usage: songs.py [-h] [--genius-patch | --no-genius-patch] song [song ...]
+usage: songs.py [-h] [-r | --refresh | --no-refresh] [--genius-patch | --no-genius-patch] song [song ...]
 
 positional arguments:
   song
 
 options:
   -h, --help            show this help message and exit
+  -r, --refresh, --no-refresh
+                        Skip database and refresh song (default: False)
   --genius-patch, --no-genius-patch
                         Use patched version of Genius API (default: True)
 ```
@@ -79,6 +81,7 @@ python3 songs.py "Ma ucide ea" "Mihail"
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
+Reading saved lyrics from database...
 
 Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics
@@ -105,6 +108,7 @@ Ochii mei, rușinați, coboară doritor                             My eyes, ash
 (console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
+Reading saved lyrics from database...
 
 Mă ucide ea by Mihail
 https://genius.com/Mihail-ma-ucide-ea-lyrics

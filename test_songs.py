@@ -31,10 +31,11 @@ def test_process_song(
         "MS_TRANSLATOR_KEY": "fake_token_2",
         "MS_TRANSLATOR_REGION": "fake_token_3",
     }
+    refresh = False
     experimental = False
 
     # Act
-    process_song(song, artist, access_keys, experimental)
+    process_song(song, artist, access_keys, refresh, experimental)
 
     # Assert
     # song searched by name and artist
@@ -71,10 +72,11 @@ def test_process_song_exists(
         "MS_TRANSLATOR_KEY": "fake_token_2",
         "MS_TRANSLATOR_REGION": "fake_token_3",
     }
+    refresh = False
     experimental = False
 
     # Act
-    process_song(song, artist, access_keys, experimental)
+    process_song(song, artist, access_keys, refresh, experimental)
 
     # Assert
     # song searched by name and artist
@@ -109,10 +111,11 @@ def test_process_song_null(
         "MS_TRANSLATOR_KEY": "fake_token_2",
         "MS_TRANSLATOR_REGION": "fake_token_3",
     }
+    refresh = False
     experimental = False
 
     # Act
-    process_song(song, artist, access_keys, experimental)
+    process_song(song, artist, access_keys, refresh, experimental)
 
     # Assert
     # song searched by name and artist
