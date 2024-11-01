@@ -25,25 +25,6 @@ def test_lyrics():
     assert isinstance(lyrics_obj, Lyrics)
     assert lyrics_obj.get_lyrics() == lyrics_text
     assert lyrics_obj.get_stanzas() == expected_stanzas
-    assert lyrics_obj.get_num_stanzas() == len(expected_stanzas)
-
-
-def test_min_stanzas():
-    """
-    Gets the minimum number of stanzas between two lyrics
-    """
-
-    # Prepare
-    text_two = "one\n\ntwo"
-    text_three = "one\n\ntwo\n\nthree"
-
-    # Act
-    lyrics1 = Lyrics(text_two)
-    lyrics2 = Lyrics(text_three)
-    min_stanzas = lyrics1.get_min_stanzas(lyrics2)
-
-    # Assert
-    assert min_stanzas == 2
 
 
 def test_update_lyrics():
@@ -65,4 +46,3 @@ def test_update_lyrics():
     assert isinstance(lyrics_obj, Lyrics)
     assert lyrics_obj.get_lyrics() == lyrics_new_text
     assert lyrics_obj.get_stanzas() == expected_new_stanzas
-    assert lyrics_obj.get_num_stanzas() == len(expected_new_stanzas)

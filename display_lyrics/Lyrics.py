@@ -32,15 +32,3 @@ class Lyrics:
         Get the stanzas
         """
         return self.stanzas
-
-    def get_num_stanzas(self):
-        """
-        Get the number of stanzas
-        """
-        return len(self.stanzas)
-
-    def get_min_stanzas(self, other):
-        """
-        Get the minimum number of stanzas between two Lyrics
-        """
-        return min(len(self.stanzas), len(other.stanzas))
