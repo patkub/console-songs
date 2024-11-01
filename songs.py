@@ -26,12 +26,13 @@ from display_lyrics import ConsoleDisplayLyrics
 load_dotenv()
 
 
-def process_song(song, artist, access_keys, genius_patch):
+def process_song(song, artist, access_keys, refresh, genius_patch):
     """
     Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
     @param song: the name of the song
     @param artist: the name of the artist
     @param access_keys: dictionary of API access keys
+    @param refresh: skip database and refresh song
     @param genius_patch: use patched version of Genius api
     """
     #
@@ -64,6 +65,29 @@ def process_song(song, artist, access_keys, genius_patch):
             return
 
     #
+    # Fetch song from database
+    #
+    song_db_handler = SongDatabaseHandler()
+    song_db_con = song_db_handler.setup_song_database()
+    if not refresh and song_db_con:  # pragma: no cover
+        # fetch song from database
+        print("Reading saved lyrics from database...")
+        song_res = song_db_handler.get_song_artist(
+            song_info.full_title, song_info.artist
+        )
+        if song_res and len(song_res) >= 5:
+            # already have this song saved in database
+            english_translation = song_res[4]
+            # display original and English translated lyrics side-by-side
+            ConsoleDisplayLyrics.display_lyrics(
+                song_info, song_lyrics, english_translation
+            )
+            # song fetched from database, end
+            return
+
+    print("Translating the lyrics...")
+
+    #
     # Translate lyrics to English using Microsoft Azure AI Translator
     #
     lyrics_translator = TranslateLyrics(
@@ -90,6 +114,13 @@ if __name__ == "__main__":  # pragma: no cover
     )
     parser.add_argument("song", nargs="+")
     parser.add_argument(
+        "-r",
+        "--refresh",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Skip database and refresh song",
+    )
+    parser.add_argument(
         "--genius-patch",
         action=argparse.BooleanOptionalAction,
         default=True,
@@ -110,4 +141,4 @@ if __name__ == "__main__":  # pragma: no cover
     # Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
     #
 
-    process_song(song, artist, access_keys, args.genius_patch)
+    process_song(song, artist, access_keys, args.refresh, args.genius_patch)

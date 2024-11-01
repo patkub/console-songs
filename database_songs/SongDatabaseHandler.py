@@ -1,4 +1,4 @@
-import sqlite3
+import os, sqlite3, sys
 
 
 class SongDatabaseHandler:  # pragma: no cover
@@ -11,8 +11,9 @@ class SongDatabaseHandler:  # pragma: no cover
         @return: database connection, or None if error occurred
         """
         try:
-            # create database of songs
-            con = sqlite3.connect("database_songs.db")
+            # create database of songs in script directory
+            __dirname = os.path.dirname(sys.argv[0])
+            con = sqlite3.connect(os.path.join(__dirname, "database_songs.db"))
             cur = con.cursor()
             cur.execute(
                 """CREATE TABLE IF NOT EXISTS songs (
