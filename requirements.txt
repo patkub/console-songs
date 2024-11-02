@@ -3,11 +3,10 @@ python-dotenv
 requests
 lyricsgenius
 side-by-side
+beautifulsoup4
 
-# Unit Tests
+# Dev dependencies
 pytest
 pytest-cov
 black
-
-# PatchedGenius
-beautifulsoup4
+twine

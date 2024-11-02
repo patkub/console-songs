@@ -29,7 +29,8 @@ classifiers = [
 cli = [
     "pytest",
     "pytest-cov",
-    "black"
+    "black",
+    "twine"
 ]
 
 [project.scripts]
