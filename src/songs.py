@@ -85,7 +85,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     ConsoleDisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
 
 
-if __name__ == "__main__":  # pragma: no cover
+def main():  # pragma: no cover
     #
     # Parse arguments
     #
@@ -123,3 +123,7 @@ if __name__ == "__main__":  # pragma: no cover
     #
 
     process_song(song, artist, access_keys, args.refresh, args.genius_patch)
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()
