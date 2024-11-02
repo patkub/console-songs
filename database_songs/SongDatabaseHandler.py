@@ -17,12 +17,12 @@ class SongDatabaseHandler:  # pragma: no cover
             cur = con.cursor()
             cur.execute(
                 """CREATE TABLE IF NOT EXISTS songs (
-                        id INTEGER PRIMARY KEY, 
                         full_title TEXT,
                         artist TEXT,
                         url TEXT,
                         original_lyrics TEXT,
-                        english_lyrics TEXT
+                        english_lyrics TEXT,
+                        PRIMARY KEY(full_title, artist)
                     );"""
             )
             con.commit()
