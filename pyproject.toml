@@ -1,2 +1,36 @@
+[project]
+name = "console-songs"
+version = "2024.11.02"
+dependencies = [
+    "python-dotenv",
+    "requests",
+    "lyricsgenius",
+    "side-by-side",
+    "beautifulsoup4"
+]
+requires-python = ">=3.8"
+authors = [
+    {name = "Patrick Kubiak", email = "epicpatka@gmail.com"}
+]
+maintainers = [
+    {name = "Patrick Kubiak", email = "epicpatka@gmail.com"}
+]
+description = "Given a song and artist, fetches lyrics from Genius, translates them to English using Azure AI Translator, and displays original and translated lyrics side-by-side in the console."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["console", "songs", "genius-lyrics-api", "azure-translator"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Environment :: Console"
+]
+
+[project.optional-dependencies]
+cli = [
+    "pytest",
+    "pytest-cov",
+    "black"
+]
+
 [project.scripts]
-greet = "songs:main"
+console-songs = "songs:main"

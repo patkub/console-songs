@@ -14,49 +14,24 @@
 
 Enjoy listening to music and learning a new language!
 
-### Setup
-Requires Python 3.11+
-
-Create an `.env` file with your API keys:
+### Install
 ```
-GENIUS_ACCESS_TOKEN=...
-MS_TRANSLATOR_KEY=...
-MS_TRANSLATOR_REGION=...
-```
-- [Genius API](https://docs.genius.com)
-- [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
-
-Setup a virtual environment:
-```
-python3 -m venv .
-source bin/activate
-```
-
-Install dependencies:
-```
-pip3 install -r requirements.txt
-```
-
-You should now be able to run `python3 songs.py --help` and see usage.
-
-When making code changes, remember to format code with black:
-```
-black .
+pipx install .
 ```
 
 ### Usage
 
 Provide the song and optionally the artist's name
 ```
-python3 songs.py song [artist]
+console-songs song [artist]
 ```
 <details>
 
 <summary>Full Usage</summary>
 
 ```
-(console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py --help
-usage: songs.py [-h] [-r | --refresh | --no-refresh] [--genius-patch | --no-genius-patch] song [song ...]
+(console-songs) patka@Patricks-MacBook-Air console-songs % console-songs --help
+usage: console-songs [-h] [-r | --refresh | --no-refresh] [--genius-patch | --no-genius-patch] song [song ...]
 
 positional arguments:
   song
@@ -78,7 +53,7 @@ python3 songs.py "Ma ucide ea" "Mihail"
 
 ### Sample Output
 ```
-(console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
+(console-songs) patka@Patricks-MacBook-Air console-songs % console-songs "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
 
@@ -176,6 +151,37 @@ Da, da...                                                        Yes, yes...
 ```
 
 </details>
+
+
+### Development Setup
+Requires Python 3.11+
+
+Create an `.env` file with your API keys:
+```
+GENIUS_ACCESS_TOKEN=...
+MS_TRANSLATOR_KEY=...
+MS_TRANSLATOR_REGION=...
+```
+- [Genius API](https://docs.genius.com)
+- [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
+
+Setup a virtual environment:
+```
+python3 -m venv .
+source bin/activate
+```
+
+Install dependencies:
+```
+pip3 install -r requirements.txt
+```
+
+You should now be able to run `python3 songs.py --help` and see usage.
+
+When making code changes, remember to format code with black:
+```
+black .
+```
 
 
 ### Unit Tests
