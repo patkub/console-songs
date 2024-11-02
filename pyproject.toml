@@ -30,6 +30,7 @@ cli = [
     "pytest",
     "pytest-cov",
     "black",
+    "build",
     "twine"
 ]
 

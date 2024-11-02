@@ -9,4 +9,5 @@ beautifulsoup4
 pytest
 pytest-cov
 black
+build
 twine

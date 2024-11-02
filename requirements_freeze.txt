@@ -1,5 +1,6 @@
 beautifulsoup4==4.12.3
 black==24.10.0
+build==1.2.2.post1
 certifi==2024.8.30
 cffi==1.17.1
 charset-normalizer==3.4.0
@@ -28,6 +29,7 @@ platformdirs==4.3.6
 pluggy==1.5.0
 pycparser==2.22
 Pygments==2.18.0
+pyproject_hooks==1.2.0
 pytest==8.3.3
 pytest-cov==6.0.0
 python-dotenv==1.0.1
