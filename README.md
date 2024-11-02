@@ -15,6 +15,10 @@
 Enjoy listening to music and learning a new language!
 
 ### Install
+
+Requires [pipx](https://pipx.pypa.io/stable/)
+
+Install the `console-songs` script with pipx.
 ```
 pipx install .
 ```
