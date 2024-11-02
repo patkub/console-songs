@@ -39,7 +39,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     # Fetch song lyrics from Genius
     #
     patched_genius = PatchedGenius if genius_patch else None
-    lyrics_fetcher = FetchLyrics(access_keys["GENIUS_ACCESS_TOKEN"], patched_genius)
+    lyrics_fetcher = FetchLyrics(access_keys["CS_GENIUS_ACCESS_TOKEN"], patched_genius)
     song_info = lyrics_fetcher.fetch_lyrics(song, artist)
     if song_info is None:
         # song not found, end
@@ -72,7 +72,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     # Translate lyrics to English using Microsoft Azure AI Translator
     #
     lyrics_translator = TranslateLyrics(
-        access_keys["MS_TRANSLATOR_KEY"], access_keys["MS_TRANSLATOR_REGION"]
+        access_keys["CS_MS_TRANSLATOR_KEY"], access_keys["CS_MS_TRANSLATOR_REGION"]
     )
     english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 
@@ -85,7 +85,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     ConsoleDisplayLyrics.display_lyrics(song_info, song_lyrics, english_translation)
 
 
-if __name__ == "__main__":  # pragma: no cover
+def main():  # pragma: no cover
     #
     # Parse arguments
     #
@@ -113,9 +113,9 @@ if __name__ == "__main__":  # pragma: no cover
     artist = args.song[1] if len(args.song) > 1 else None
 
     access_keys = {
-        "GENIUS_ACCESS_TOKEN": os.getenv("GENIUS_ACCESS_TOKEN"),
-        "MS_TRANSLATOR_KEY": os.getenv("MS_TRANSLATOR_KEY"),
-        "MS_TRANSLATOR_REGION": os.getenv("MS_TRANSLATOR_REGION"),
+        "CS_GENIUS_ACCESS_TOKEN": os.getenv("CS_GENIUS_ACCESS_TOKEN"),
+        "CS_MS_TRANSLATOR_KEY": os.getenv("CS_MS_TRANSLATOR_KEY"),
+        "CS_MS_TRANSLATOR_REGION": os.getenv("CS_MS_TRANSLATOR_REGION"),
     }
 
     #
@@ -123,3 +123,7 @@ if __name__ == "__main__":  # pragma: no cover
     #
 
     process_song(song, artist, access_keys, args.refresh, args.genius_patch)
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()

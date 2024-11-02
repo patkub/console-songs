@@ -27,9 +27,9 @@ def test_process_song(
     song = "test_song_name"
     artist = "test_artist_name"
     access_keys = {
-        "GENIUS_ACCESS_TOKEN": "fake_token_1",
-        "MS_TRANSLATOR_KEY": "fake_token_2",
-        "MS_TRANSLATOR_REGION": "fake_token_3",
+        "CS_GENIUS_ACCESS_TOKEN": "fake_token_1",
+        "CS_MS_TRANSLATOR_KEY": "fake_token_2",
+        "CS_MS_TRANSLATOR_REGION": "fake_token_3",
     }
     refresh = False
     experimental = False
@@ -68,9 +68,9 @@ def test_process_song_exists(
     song = "test_song_name"
     artist = "test_artist_name"
     access_keys = {
-        "GENIUS_ACCESS_TOKEN": "fake_token_1",
-        "MS_TRANSLATOR_KEY": "fake_token_2",
-        "MS_TRANSLATOR_REGION": "fake_token_3",
+        "CS_GENIUS_ACCESS_TOKEN": "fake_token_1",
+        "CS_MS_TRANSLATOR_KEY": "fake_token_2",
+        "CS_MS_TRANSLATOR_REGION": "fake_token_3",
     }
     refresh = False
     experimental = False
@@ -107,9 +107,9 @@ def test_process_song_null(
     song = "test_song_name"
     artist = "test_artist_name"
     access_keys = {
-        "GENIUS_ACCESS_TOKEN": "fake_token_1",
-        "MS_TRANSLATOR_KEY": "fake_token_2",
-        "MS_TRANSLATOR_REGION": "fake_token_3",
+        "CS_GENIUS_ACCESS_TOKEN": "fake_token_1",
+        "CS_MS_TRANSLATOR_KEY": "fake_token_2",
+        "CS_MS_TRANSLATOR_REGION": "fake_token_3",
     }
     refresh = False
     experimental = False
