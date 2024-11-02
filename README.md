@@ -18,7 +18,7 @@ Enjoy listening to music and learning a new language!
 
 Requires Python 3.11+ and [pipx](https://pipx.pypa.io/stable/).
 
-Install the `console-songs` script with pipx from [PyPi](https://pypi.org/project/console-songs/).
+Install the `console-songs` script with pipx from [PyPI](https://pypi.org/project/console-songs/).
 ```
 pipx install console-songs==2024.11.03
 ```
@@ -216,7 +216,7 @@ pytest
 
 ### Publishing
 
-Publish a new version to PyPi.
+Publish a new version to PyPI.
 ```
 python3 -m build
 python3 -m pip install --upgrade twine
