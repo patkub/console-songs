@@ -16,23 +16,27 @@ Enjoy listening to music and learning a new language!
 
 ### Install
 
-Requires [pipx](https://pipx.pypa.io/stable/)
+Requires Python 3.11+ and [pipx](https://pipx.pypa.io/stable/).
 
 Install the `console-songs` script with pipx.
 ```
 pipx install .
 ```
 
-Setup environment variables
+Setup environment variables with your API keys.
 ```
 export "CS_GENIUS_ACCESS_TOKEN=..."
 export "CS_MS_TRANSLATOR_KEY=..."
 export "CS_MS_TRANSLATOR_REGION=..."
 ```
+Reference documentation to get API keys.
+- [Genius API](https://docs.genius.com)
+- [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
+
 
 ### Usage
 
-Provide the song and optionally the artist's name
+Provide the song and optionally the artist's name.
 ```
 console-songs song [artist]
 ```
@@ -59,7 +63,7 @@ options:
 
 Example:
 ```
-python3 songs.py "Ma ucide ea" "Mihail"
+console-songs "Ma ucide ea" "Mihail"
 ```
 
 ### Sample Output
@@ -90,7 +94,7 @@ Ochii mei, rușinați, coboară doritor                             My eyes, ash
 <summary>Full Output</summary>
 
 ```
-(console-songs) patka@Patricks-MacBook-Air console-songs % python3 songs.py "Ma ucide ea" "Mihail"
+(console-songs) patka@Patricks-MacBook-Air console-songs % console-songs "Ma ucide ea" "Mihail"
 Searching for "Ma ucide ea" by Mihail...
 Done.
 
@@ -167,12 +171,13 @@ Da, da...                                                        Yes, yes...
 ### Development Setup
 Requires Python 3.11+
 
-Create an `.env` file with your API keys:
+Create an `.env` file with your API keys.
 ```
 CS_GENIUS_ACCESS_TOKEN=...
 CS_MS_TRANSLATOR_KEY=...
 CS_MS_TRANSLATOR_REGION=...
 ```
+Reference documentation to get API keys.
 - [Genius API](https://docs.genius.com)
 - [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
 
