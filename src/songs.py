@@ -58,9 +58,9 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
         song_res = song_db_handler.get_song_artist(
             song_info.full_title, song_info.artist
         )
-        if song_res and len(song_res) >= 6:
+        if song_res and len(song_res) >= 5:
             # already have this song saved in database
-            english_translation = song_res[5]
+            english_translation = song_res[4]
             # display original and English translated lyrics side-by-side
             ConsoleDisplayLyrics.display_lyrics(
                 song_info, song_lyrics, english_translation
