@@ -72,7 +72,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     # Translate lyrics to English using Microsoft Azure AI Translator
     #
     lyrics_translator = TranslateLyrics(
-        access_keys["MS_TRANSLATOR_KEY"], access_keys["MS_TRANSLATOR_REGION"]
+        access_keys["CS_MS_TRANSLATOR_KEY"], access_keys["CS_MS_TRANSLATOR_REGION"]
     )
     english_translation = lyrics_translator.translate_lyrics(song_lyrics)
 
