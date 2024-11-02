@@ -1,6 +1,6 @@
 [project]
 name = "console-songs"
-version = "2024.11.02"
+version = "2024.11.03"
 dependencies = [
     "python-dotenv",
     "requests",

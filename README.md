@@ -18,9 +18,9 @@ Enjoy listening to music and learning a new language!
 
 Requires Python 3.11+ and [pipx](https://pipx.pypa.io/stable/).
 
-Install the `console-songs` script with pipx.
+Install the `console-songs` script with pipx from [PyPi](https://pypi.org/project/console-songs/).
 ```
-pipx install .
+pipx install console-songs==2024.11.03
 ```
 
 Setup environment variables with your API keys.
@@ -169,7 +169,13 @@ Da, da...                                                        Yes, yes...
 
 
 ### Development Setup
-Requires Python 3.11+
+
+Requires Python 3.11+ and [pipx](https://pipx.pypa.io/stable/).
+
+Install the `console-songs` script with pipx for developement.
+```
+pipx install .
+```
 
 Create an `.env` file with your API keys.
 ```
