@@ -19,6 +19,13 @@ Enjoy listening to music and learning a new language!
 pipx install .
 ```
 
+Setup environment variables
+```
+export "CS_GENIUS_ACCESS_TOKEN=..."
+export "CS_MS_TRANSLATOR_KEY=..."
+export "CS_MS_TRANSLATOR_REGION=..."
+```
+
 ### Usage
 
 Provide the song and optionally the artist's name
@@ -158,9 +165,9 @@ Requires Python 3.11+
 
 Create an `.env` file with your API keys:
 ```
-GENIUS_ACCESS_TOKEN=...
-MS_TRANSLATOR_KEY=...
-MS_TRANSLATOR_REGION=...
+CS_GENIUS_ACCESS_TOKEN=...
+CS_MS_TRANSLATOR_KEY=...
+CS_MS_TRANSLATOR_REGION=...
 ```
 - [Genius API](https://docs.genius.com)
 - [Azure Translator Resource](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
