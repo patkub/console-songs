@@ -192,7 +192,7 @@ Install dependencies:
 pip3 install -r requirements.txt
 ```
 
-You should now be able to run `python3 songs.py --help` and see usage.
+You should now be able to run `python3 src/songs.py --help` and see usage.
 
 When making code changes, remember to format code with black:
 ```
