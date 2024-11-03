@@ -18,6 +18,15 @@ class MockSongDatabaseHandler:  # pragma: no cover
         """
         return None
 
+    def search_song_by_name(self, name, artist):
+        """
+        Search for song by name and artist in database
+        @param name: song name
+        @param artist: artist name or None
+        @return: song, or None if not found
+        """
+        return None
+
     def save_song(self, song_info, lyrics, translation):
         """
         Save song in database

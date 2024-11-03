@@ -52,6 +52,32 @@ class SongDatabaseHandler:  # pragma: no cover
             pass
         return None
 
+    def search_song_by_name(self, name, artist):
+        """
+        Search for song by name and artist in database
+        @param name: song name
+        @param artist: artist name or None
+        @return: song, or None if not found
+        """
+        try:
+            if self.con:
+                cur = self.con.cursor()
+                query_string = (
+                    "SELECT * FROM songs WHERE full_title LIKE '%{full_title}%'".format(
+                        full_title=name
+                    )
+                )
+                if artist:
+                    query_string = "SELECT * FROM songs WHERE full_title LIKE '%{full_title}%' AND artist LIKE '%{artist}%'".format(
+                        full_title=name, artist=artist
+                    )
+                res = cur.execute(query_string)
+                if res:
+                    return res.fetchone()
+        except sqlite3.Error:
+            pass
+        return None
+
     def save_song(self, song_info, lyrics, translation):
         """
         Save song in database

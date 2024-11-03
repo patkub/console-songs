@@ -35,6 +35,39 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     @param refresh: skip database and refresh song
     @param genius_patch: use patched version of Genius api
     """
+
+    #
+    # Fetch song from database
+    #
+    song_db_handler = SongDatabaseHandler()
+    song_db_con = song_db_handler.setup_song_database()
+
+    class DBSongInfo:
+        pass
+
+    if not refresh:  # pragma: no cover
+        # search in database
+        # TODO: only works if it finds an exact match due to accents
+        # TODO(works): python3 src/songs.py "ucide ea" "Mihail"
+        # TODO(broken): python3 src/songs.py "ma ucide ea" "Mihail"
+        search_res = song_db_handler.search_song_by_name(song, artist)
+        if search_res and len(search_res) >= 5:
+            # already have this song saved in database
+            song_info = DBSongInfo()
+            song_info.full_title = search_res[0]
+            song_info.url = search_res[2]
+
+            song_lyrics = search_res[3]
+            english_translation = search_res[4]
+            # display original and English translated lyrics side-by-side
+            ConsoleDisplayLyrics.display_lyrics(
+                song_info, song_lyrics, english_translation
+            )
+            # song fetched from database, end
+            # TODO: remove print
+            print("DONE, used only DB")
+            return
+
     #
     # Fetch song lyrics from Genius
     #
@@ -48,11 +81,6 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     # get the song lyrics
     song_lyrics = song_info.lyrics
 
-    #
-    # Fetch song from database
-    #
-    song_db_handler = SongDatabaseHandler()
-    song_db_con = song_db_handler.setup_song_database()
     if not refresh and song_db_con:  # pragma: no cover
         # fetch song from database
         song_res = song_db_handler.get_song_artist(
