@@ -12,7 +12,7 @@ class TranslateLyrics:
         self.subscription_key = translator_key
         self.region = region
 
-    def translate_lyrics(self, lyrics):
+    def translate_lyrics(self, lyrics, to_lang):
         """
         Translates lyrics to English using Microsoft Azure AI Translator
 
@@ -26,7 +26,7 @@ class TranslateLyrics:
         # from romanian to english
         # params = '&from=ro&to=en'
         # or detect original language, and translate to english
-        params = "&to=en"
+        params = "&to=" + to_lang
         constructed_url = endpoint + path + params
 
         headers = {

@@ -60,6 +60,7 @@ class SongDatabaseHandler:  # pragma: no cover
         @param translation: English translation
         @return: True on success, False otherwise
         """
+        # TODO: Update database to store multiple language translations for a single song
         success = True
         try:
             if self.con:

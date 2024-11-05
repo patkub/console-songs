@@ -26,7 +26,7 @@ from display_lyrics import ConsoleDisplayLyrics
 load_dotenv()
 
 
-def process_song(song, artist, access_keys, refresh, genius_patch):
+def process_song(song, artist, access_keys, refresh, genius_patch, to_lang):
     """
     Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
     @param song: the name of the song
@@ -34,6 +34,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     @param access_keys: dictionary of API access keys
     @param refresh: skip database and refresh song
     @param genius_patch: use patched version of Genius api
+    @param to_lang: language to translate song to
     """
     #
     # Fetch song lyrics from Genius
@@ -74,7 +75,7 @@ def process_song(song, artist, access_keys, refresh, genius_patch):
     lyrics_translator = TranslateLyrics(
         access_keys["CS_MS_TRANSLATOR_KEY"], access_keys["CS_MS_TRANSLATOR_REGION"]
     )
-    english_translation = lyrics_translator.translate_lyrics(song_lyrics)
+    english_translation = lyrics_translator.translate_lyrics(song_lyrics, to_lang)
 
     # Save this song in the database
     song_db_handler.save_song(song_info, song_lyrics, english_translation)
@@ -94,6 +95,13 @@ def main():  # pragma: no cover
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument("song", nargs="+")
+    parser.add_argument(
+        "--to-lang",
+        type=str,
+        default="en",
+        required=False,
+        help="Language to translate to",
+    )
     parser.add_argument(
         "-r",
         "--refresh",
@@ -122,7 +130,9 @@ def main():  # pragma: no cover
     # Fetch song lyrics, translate to English, and display original and English side-by-side lyrics.
     #
 
-    process_song(song, artist, access_keys, args.refresh, args.genius_patch)
+    process_song(
+        song, artist, access_keys, args.refresh, args.genius_patch, args.to_lang
+    )
 
 
 if __name__ == "__main__":  # pragma: no cover
